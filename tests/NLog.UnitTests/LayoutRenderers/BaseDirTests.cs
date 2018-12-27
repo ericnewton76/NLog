@@ -96,12 +96,6 @@ namespace NLog.UnitTests.LayoutRenderers
                 //test 1 
                 AssertLayoutRendererOutput("${basedir}", fakeBaseDir);
 
-                //test 2
-                var paths = LogManager.LogFactory.GetCandidateConfigFilePaths().ToList();
-                var count = paths.Count(p => p.StartsWith(fakeBaseDir));
-
-                Assert.True(count > 0, $"At least one path should start with '{fakeBaseDir}'");
-
             }
             finally
             {
